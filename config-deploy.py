@@ -29,4 +29,3 @@ SECURITY_POST_LOGIN_VIEW = 'https://ec2-XX-XXX-XXX-XXX.compute-1.amazonaws.com/'
 
 # This address gets all change notifications
 SECURITY_TEAM_EMAIL = 'nagwww@gmail.com'
-

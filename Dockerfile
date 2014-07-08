@@ -8,7 +8,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F
     echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list &&\
     apt-get update -y &&\
     apt-get -y -q install python-software-properties software-properties-common postgresql-9.3 postgresql-client-9.3 postgresql-contrib-9.3 &&\
-    apt-get install -y python-pip python-dev python-psycopg2 libpq-dev nginx supervisor git
+    apt-get install -y python-pip python-dev python-psycopg2 libpq-dev nginx supervisor git curl
 
 #Run as postgres user
 # Run the rest of the commands as the ``postgres`` user created by the ``postgres-9.3`` package when it was ``apt-get installed``
@@ -42,4 +42,3 @@ ENV SECURITY_MONKEY_SETTINGS /home/ubuntu/security_monkey/env-config/config-depl
 ADD securitymonkey.conf /etc/nginx/sites-available/
 ADD securitymonkey.sh /home/ubuntu/
 CMD /home/ubuntu/securitymonkey.sh
-

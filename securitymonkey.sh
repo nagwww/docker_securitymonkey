@@ -1,10 +1,21 @@
 #!/bin/bash
 
-mail="nagwww@gmail.com"
-host="ec2-XX-XXX-XXX-XXX.compute-1.amazonaws.com"
+email=$mail
+host_name=$host
 
-sed -i "s/securityteam@example.com/$mail/g" /home/ubuntu/security_monkey/env-config/config-deploy.py
-sed -i "s/ec2-XX-XXX-XXX-XXX.compute-1.amazonaws.com/$host/g" /home/ubuntu/security_monkey/env-config/config-deploy.py
+if [ "${email}" == "" ]; then
+  echo "Email is not passed. Please set it as dockerrun -e mail=test@example.com"
+  email="nagwww@gmail.com"
+fi
+
+if [ "${host_name}" == "" ]; then
+  echo "Host or EC2 name is not passed. Please set it as dockerrun -e host=test@ec2-XX-XXX-XXX-XXX.compute-1.amazonaws.com"
+  host="ec2-XX-XXX-XXX-XXX.compute-1.amazonaws.com"
+fi
+
+sed -i "s/securityteam@example.com/$email/g" /home/ubuntu/security_monkey/env-config/config-deploy.py
+sed -i "s/securitymonkey@example.com/$email/g" /home/ubuntu/security_monkey/env-config/config-deploy.py
+sed -i "s/ec2-XX-XXX-XXX-XXX.compute-1.amazonaws.com/$host_name/g" /home/ubuntu/security_monkey/env-config/config-deploy.py
 
 
 openssl genrsa -des3 -passout pass:yourpassword -out server.key 2048
@@ -46,3 +57,4 @@ supervisorctl -c security_monkey.ini
 
 echo "Completed ... "
 /bin/bash
+

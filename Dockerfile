@@ -51,4 +51,5 @@ ENV SECURITY_MONKEY_SETTINGS /usr/local/src/security_monkey/env-config/config-de
 
 ADD securitymonkey.conf /etc/nginx/sites-available/
 ADD securitymonkey.sh /usr/local/src/
+ADD static.tar /usr/local/src/security_monkey/security_monkey/
 CMD /usr/local/src/securitymonkey.sh

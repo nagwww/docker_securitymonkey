@@ -13,7 +13,7 @@ TO Install Security Monkey on an EC2 instance
 -- sudo docker pull nagwww/securitymonkey
 
 - Install SecurityMonkey as
---  sudo docker run -e "mail=nagwww@gmail.com" -e "host=ec2-xx-xxx-xxx-xxx.compute-1.amazonaws.com" -i -t -p 443:443 -p 5000:5000 "nagwww/securitymonkey:v2" /home/ubuntu/securitymonkey.sh
+--  sudo docker run -e "mail=nagwww@gmail.com" -e "host=ec2-xx-xxx-xxx-xxx.compute-1.amazonaws.com" -i -t -p 443:443 -p 5000:5000 "nagwww/securitymonkey:v2" /usr/local/src/securitymonkey.sh
 
 - Create a new user as
 -- monkey create_user "awsalerter@gmail.com" "Admin"

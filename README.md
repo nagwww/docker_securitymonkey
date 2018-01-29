@@ -17,6 +17,7 @@ TO Install Security Monkey on an EC2 instance
 
 - Create a new user as
 -- monkey create_user "awsalerter@gmail.com" "Admin"
+-- Add an AWS account and supervisorctl --> restart securitymonkeyscheduler
 
 To build a Docker image
 - Change the Dockerfile as needed
